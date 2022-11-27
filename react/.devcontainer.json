@@ -1,0 +1,10 @@
+{
+    "name": "React",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "react",
+    "shutdownAction": "none",
+    "extensions": [
+		"dsznajder.es7-react-js-snippets"
+	],
+    "workspaceFolder": "/app/app"
+}

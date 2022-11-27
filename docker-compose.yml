@@ -1,14 +1,15 @@
 version: '3'
 
 services:
-  django:
+  react:
     build:
-      context: ./django
+      context: ./react
       dockerfile: Dockerfile
-    command: python django/manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/app
+    command: sh -c "cd app && PORT=3000 yarn start"
     ports:
-      - "8000:8000"
+      - "3000:3000"
+    stdin_open: true
+    volumes:
+      - ./react:/app
     env_file:
-      - ./django/.env
+      - .env
